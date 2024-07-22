@@ -1,0 +1,24 @@
+name: publish
+on:
+  release:
+    types: [released]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: build
+        run: dotnet build -c Release -p:version=${GITHUB_REF#refs/*/v}
+
+      - name: pack
+        run: dotnet pack -c Release -p:version=${GITHUB_REF#refs/*/v}
+
+      - name: 🚀 nuget
+        run: dotnet nuget push bin/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
