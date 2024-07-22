@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>Spliterator</PackageId>
+    <Description>Simple extensions for no-copy split and iterate on spans, arrays and strings</Description>
+    <Authors>Foretack</Authors>
+    <license>MIT</license>
+  </PropertyGroup>
 </Project>
