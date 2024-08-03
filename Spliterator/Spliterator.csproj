@@ -8,8 +8,11 @@
 
   <PropertyGroup>
     <PackageId>Spliterator</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
     <Description>Simple extensions for no-copy split and iterate on spans, arrays and strings</Description>
     <Authors>Foretack</Authors>
     <license>MIT</license>
+    <RepositoryUrl>https://github.com/Foretack/Spliterator</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>
